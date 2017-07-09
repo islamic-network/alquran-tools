@@ -1,5 +1,5 @@
 <?php
-require_once('../src/AlQuran/Tools/Parser/Tajweed.php');
+require_once('../src/AlQuranCloud/Tools/Parser/Tajweed.php');
 
 $json = json_decode(file_get_contents('../data/tajweed.json'));
 $text = $json->data->text;

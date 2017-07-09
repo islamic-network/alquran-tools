@@ -22,6 +22,9 @@ class Tajweed
 
     private $meta;
 
+    /**
+     * [__construct description]
+     */
     public function __construct()
     {
         $this->createMetaData();
@@ -153,14 +156,34 @@ class Tajweed
         ];
     }
 
-    public function parse($text)
+    /**
+     * Parses tajweed from the GlobalQuran and AlQuran APIs to return markup
+     * @param  string  $text      Verse text
+     * @param  boolean $fixWebkit Tries to fix for Chrome and Safari. This is experimental and has known problems.
+     * @return string             Parsed text that can be used to display tajweed
+     */
+    public function parse($text, $fixWebkit = false)
     {
-        return
-            $this->closeParsing(
-                $this->parseTajweed($text)
-            );
+        if ($fixWebkit) {
+            return
+                $this->webkitFix(
+                    $this->closeParsing(
+                        $this->parseTajweed($text)
+                    )
+                );
+            }
+
+            return
+                $this->closeParsing(
+                    $this->parseTajweed($text)
+                );
     }
 
+    /**
+     * [parseTajweed description]
+     * @param  string $text Verse text
+     * @return String
+     */
     public function parseTajweed($text)
     {
         foreach ($this->meta as $meta)
@@ -172,15 +195,49 @@ class Tajweed
         return $text;
     }
 
-    public function closeParsing($text)
+    /**
+     * This method tries to add in a fix for webkit browsers that break with <tags> inside a string.
+     * It does so by using the &zwj; joiner, but that does not always work. It's not smart enough to know,
+     * for instance, when properly connect a meem to a yaa, among other things. Your best bet is to not use
+     * this but use Firefox or the like.
+     * See https://stackoverflow.com/questions/11155849/partially-colored-arabic-word-in-html
+     * and https://bugs.webkit.org/show_bug.cgi?id=6148.
+     * @param  string $text Parsed tajweed verse with <tajweed> tags
+     * @return string
+     */
+    public function webkitFix($text)
     {
-        $text = str_replace('[', '" >', $text);
-        $text = str_replace(']', '</tajweed>', $text);
+        // Identify Tajweed tags, if there is not a space before or after, add &zwj;
+        // After
+        $text = preg_replace('/<\/tajweed>(\S)/', '&zwj;${0}', $text);
+        // Before
+        $text = preg_replace('/(\S)<tajweed class="(.*?)" data-type="(.*?)" data-description="(.*?)" data-tajweed="(.*?)">(\S)/', '${1}<tajweed class="${2}" data-type="${3}" data-description="${4}" data-tajweed="${5}">&zwj;&zwj;${6}', $text);
+
+        // Let's remove all joiners where not needed for an Alif and a Waw
+        $text = str_replace(
+            ['ٱ&zwj;'],
+            ['ٱ'],
+            $text);
 
         return $text;
     }
 
+    /**
+     * [closeParsing description]
+     * @param  string $text
+     * @return string
+     */
+    public function closeParsing($text)
+    {
+        $text = str_replace(['[', ']'], ['">', '</tajweed>'], $text);
 
+        return $text;
+    }
+
+    /**
+     * Returns tajweed meta settings
+     * @return array The Tajweed metadata array
+     */
     public function getMeta()
     {
         return $this->meta;
