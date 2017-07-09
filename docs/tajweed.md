@@ -163,4 +163,4 @@ See it in Firefox: Add <a href="#"></a>
 
 ### How do I get those colours to display?
 
-Using the css file at <a href="css/tajweed.css">css/tajweed.css</a>.
+Using the css file at <a href="../css/tajweed.css">css/tajweed.css</a>.
