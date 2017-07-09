@@ -1,6 +1,7 @@
 # Tajweed Documentation
 
 ## Code Examples
+Coming soon! The code is already there, the documentation is not :).
 
 ## What Data does this apply to
 Data returned by the Global Quran and Al Quran Cloud APIs for the Tajweed edition. For example:
@@ -159,8 +160,8 @@ and returns:
 ```
 
 ### Not convinced? Here is an example in the browser...
-See it in Firefox: Add <a href="#"></a>
+See it in Firefox: Add <a href="#">URL here</a>
 
 ### How do I get those colours to display?
 
-Using the css file at <a href="https://github.com/meezaan/alquran-tools/tree/master/www/css">css/tajweed.css</a>.
+Using the css file at <a href="https://github.com/meezaan/alquran-tools/tree/master/www/css/tajweed.css">css/tajweed.css</a>.
