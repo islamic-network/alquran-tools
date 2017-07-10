@@ -171,7 +171,7 @@ and returns:
 ```
 
 ### Not convinced? Here is an example in the browser...
-See it in Firefox: Add <a href="alquran.cloud/tajweed-guide">alquran.cloud/tajweed-guide</a>. It won't work in Chrome or Safari (yet). See the known issues section in the <a href="../README.md">main Readme file</a>.
+See it in Firefox: Add <a href="https://alquran.cloud/tajweed-guide">alquran.cloud/tajweed-guide</a>. It won't work in Chrome or Safari (yet). See the known issues section in the <a href="../README.md">main Readme file</a>.
 
 ### How do I get those colours to display?
 
