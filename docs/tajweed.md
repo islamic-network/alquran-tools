@@ -1,7 +1,18 @@
 # Tajweed Documentation
 
+This document explains how Tajweed parsing. In a nutsell, it takes something like:
+
+```
+[h:9421[ٱ]
+```
+which is part of the data returned by the API for a Quran verse and converts it to:
+
+```html
+<tajweed class="ham_wasl" data-type="hamza-wasl" data-description="Hamzat ul Wasl" data-tajweed=":9421">ٱ</tajweed>
+```
+
 ## Code Examples
-Coming soon! The code is already there, the documentation is not :).
+Code Examples are available in the <a href="../README.md">main Readme file</a>.
 
 ## What Data does this apply to
 Data returned by the Global Quran and Al Quran Cloud APIs for the Tajweed edition. For example:
@@ -160,7 +171,7 @@ and returns:
 ```
 
 ### Not convinced? Here is an example in the browser...
-See it in Firefox: Add <a href="#">URL here</a>
+See it in Firefox: Add <a href="alquran.cloud/tajweed-guide">alquran.cloud/tajweed-guide</a>. It won't work in Chrome or Safari (yet). See the known issues section in the <a href="../README.md">main Readme file</a>.
 
 ### How do I get those colours to display?
 
