@@ -1,1 +1,19 @@
-Coming soon!
+{
+  "name": "alquran/tools",
+  "type": "library",
+  "description": "Various tools to parse and process Quran Text",
+  "authors": [
+    {
+      "name": "Meezaan-ud-Din Abdu Dhil-Jalali Wal-Ikram",
+      "email": "website@meezaan.net"
+    }
+  ],
+  "require-dev": {
+    "phpunit/phpunit": "^6.2"
+  },
+  "autoload": {
+    "psr-0": {
+      "AlQuranCloud": "src/"
+    }
+  }
+}
