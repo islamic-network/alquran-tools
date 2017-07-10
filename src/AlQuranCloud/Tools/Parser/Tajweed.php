@@ -1,4 +1,5 @@
 <?php
+namespace AlQuranCloud\Tools\Parser;
 
 class Tajweed
 {

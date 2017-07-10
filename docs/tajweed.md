@@ -143,7 +143,7 @@ It uses the table below to parse what the API returns and converts it to somethi
 
 ## Show me an example
 
-See the code in www/tajweed.php.
+See the code in examples/tajweed.php.
 
 But in a nutshell, it takes:
 
@@ -164,4 +164,4 @@ See it in Firefox: Add <a href="#">URL here</a>
 
 ### How do I get those colours to display?
 
-Using the css file at <a href="https://github.com/meezaan/alquran-tools/tree/master/www/css/tajweed.css">css/tajweed.css</a>.
+Using the css file at <a href="https://github.com/meezaan/alquran-tools/tree/master/examples/css/tajweed.css">css/tajweed.css</a>.

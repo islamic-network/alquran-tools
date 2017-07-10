@@ -2,7 +2,7 @@
 These *PHP* tools are to be used with the <a href="https://alquran.cloud/api">AlQuran.cloud</a> and <a href="http://docs.globalquran.com/API:Data/Quran_List">GlobalQuran.com</a> APIs. They are made available so you may get the most out of the APIs.
 
 # What do they contain
-For now, a <a href="docs/tajweed.md">Tajweed</a> and <a href="docs/buck.md">Buck</a> helper. Each section is detailed below.
+For now, a <a href="docs/tajweed.md">Tajweed</a> and <a href="docs/buck.md">Buck</a> helper. Each section is detailed below. 
 
 # Install and Get Started
 The tools add developer libraries you can use in your application. Install using composer:
@@ -13,23 +13,22 @@ composer require alquran/tools
 ### Tajweed Example
 To get tajweed text to become legible, use:
 ```php
-$parser = new Tajweed();
+<?php
+require_once('vendor/autoload.php');
+
+$parser = new \AlQuranCloud\Tools\Parser\Tajweed();
 $html = $parser->parse($text); // $text is the output text of a Verse from quran-tajweed edition. For example: http://api.alquran.cloud/ayah/24:35/quran-tajweed. Also see data/tajweed.json.
 ```
 
 ### Buckwalter Transliteration example
 To get tajweed text to become legible, use:
 ```php
-$parser = new Buck();
+<?php
+require_once('vendor/autoload.php');
+
+$parser = new \AlQuranCloud\Tools\Parser\Buck();
 $arabic = $parser->toArabic($text); // $text is the output text of a Verse from quran-buck edition. For example: http://api.alquran.cloud/ayah/24:35/quran-buck.
 ```
-
-
-
-* Add composer file and instructions.
-* Add Tajweed example
-* Add Buck example
-
 
 ## Tajweed Documentation
 

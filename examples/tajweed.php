@@ -1,18 +1,18 @@
 <?php
-require_once('../src/AlQuranCloud/Tools/Parser/Tajweed.php');
+require_once('vendor/autoload.php');
 
 $json = json_decode(file_get_contents('../data/tajweed.json'));
 $text = $json->data->text;
 
-$parser = new Tajweed();
+$parser = new AlQuranCloud\Tools\Parser\Tajweed();
 ?>
 <link href="https://alquran.cloud/public/css/font-all.css" rel="stylesheet">
 <link href="css/tajweed.css" rel="stylesheet">
 <div class="font-uthmani" style="direction: rtl">
-<?php
-echo $parser->parse($text);
-?>
+<?=$parser->parse($text);?>
 </div>
+
+<hr />
 
 <table>
     <thead>
