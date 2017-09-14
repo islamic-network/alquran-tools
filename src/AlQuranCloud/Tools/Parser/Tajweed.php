@@ -1,5 +1,6 @@
 <?php
 namespace AlQuranCloud\Tools\Parser;
+use AlQuranCloud\Tools\Parser\Tashkeel;
 
 class Tajweed
 {
@@ -23,12 +24,19 @@ class Tajweed
 
     private $meta;
 
+    private $mapper;
+
+    private $tashkeel;
+
+
     /**
      * [__construct description]
      */
     public function __construct()
     {
+        $this->tashkeel = new Tashkeel();
         $this->createMetaData();
+        $this->createMapper();
     }
 
     private function createMetaData()
@@ -157,6 +165,188 @@ class Tajweed
         ];
     }
 
+    public function createMapper()
+    {
+      $this->mapper = [
+          'ا' => [
+              'before' => false,
+              'after' => false,
+              'variations' => ['ا', 'آ', 'ٱ', 'اَ', 'اِ', 'اُ', 'اْ', 'اً', 'اّ']
+          ],
+          'إ' => [
+              'before' => true,
+              'after' => true,
+              'variations' => $this->tashkeel->get('إ')
+          ],
+          'أ' => [
+              'before' => true,
+              'after' => true,
+              'variations' => $this->tashkeel->get('أ')
+          ],
+          'ب' => [
+              'before' => true,
+              'after' => true,
+              'variations' => $this->tashkeel->get('ب')
+          ],
+          'ت' => [
+              'before' => true,
+              'after' => true,
+              'variations' => $this->tashkeel->get('ت')
+          ],
+          'ث' => [
+              'before' => true,
+              'after' => true,
+              'variations' => $this->tashkeel->get('ث')
+          ],
+          'ج' => [
+              'before' => true,
+              'after' => true,
+              'variations' => $this->tashkeel->get('ج')
+          ],
+          'ح' => [
+              'before' => true,
+              'after' => true,
+              'variations' => $this->tashkeel->get('ح')
+          ],
+          'خ' => [
+              'before' => true,
+              'after' => true,
+              'variations' => $this->tashkeel->get('خ')
+          ],
+          'د' => [
+              'before' => true,
+              'after' => false,
+              'variations' => $this->tashkeel->get('د')
+          ],
+          'ذ' => [
+              'before' => true,
+              'after' => false,
+              'variations' => $this->tashkeel->get('ذ')
+          ],
+          'ر' => [
+              'before' => true,
+              'after' => false,
+              'variations' => $this->tashkeel->get('ر')
+          ],
+          'ز' => [
+              'before' => true,
+              'after' => false,
+              'variations' => $this->tashkeel->get('ز')
+          ],
+          'ط' => [
+              'before' => true,
+              'after' => true,
+              'variations' => $this->tashkeel->get('ط')
+          ],
+          'ظ' => [
+              'before' => true,
+              'after' => true,
+              'variations' => $this->tashkeel->get('ظ')
+          ],
+          'ك' => [
+              'before' => true,
+              'after' => true,
+              'variations' => $this->tashkeel->get('ك')
+          ],
+          'ق' => [
+              'before' => true,
+              'after' => true,
+              'variations' => $this->tashkeel->get('ق')
+          ],
+          'س' => [
+              'before' => true,
+              'after' => true,
+              'variations' => $this->tashkeel->get('س')
+          ],
+          'ش' => [
+              'before' => true,
+              'after' => true,
+              'variations' => $this->tashkeel->get('ش')
+          ],
+          'ص' => [
+              'before' => true,
+              'after' => true,
+              'variations' => $this->tashkeel->get('ص')
+          ],
+          'ض' => [
+              'before' => true,
+              'after' => true,
+              'variations' => $this->tashkeel->get('ض')
+          ],
+          'ع' => [
+              'before' => true,
+              'after' => true,
+              'variations' => $this->tashkeel->get('ع')
+          ],
+          'غ' => [
+              'before' => true,
+              'after' => true,
+              'variations' => $this->tashkeel->get('غ')
+          ],
+          'ف' => [
+              'before' => true,
+              'after' => true,
+              'variations' => $this->tashkeel->get('ف')
+          ],
+          'ل' => [
+              'before' => true,
+              'after' => true,
+              'variations' => $this->tashkeel->get('ل')
+          ],
+          'م' => [
+              'before' => true,
+              'after' => true,
+              'variations' => $this->tashkeel->get('م')
+          ],
+          'ن' => [
+              'before' => true,
+              'after' => true,
+              'variations' => $this->tashkeel->get('ن')
+          ],
+          'و' => [
+              'before' => true,
+              'after' => false,
+              'variations' => $this->tashkeel->get('و')
+          ],
+          'ؤ' => [
+              'before' => true,
+              'after' => false,
+              'variations' => $this->tashkeel->get('ؤ')
+          ],
+          'ه' => [
+              'before' => true,
+              'after' => true,
+              'variations' => $this->tashkeel->get('ه')
+          ],
+          'ة' => [
+              'before' => true,
+              'after' => true,
+              'variations' => $this->tashkeel->get('ة')
+          ],
+          'ى' => [
+              'before' => true,
+              'after' => true,
+              'variations' => $this->tashkeel->get('ى')
+          ],
+          'ئ' => [
+              'before' => true,
+              'after' => true,
+              'variations' => $this->tashkeel->get('ئ')
+          ],
+          'ي' => [
+              'before' => true,
+              'after' => true,
+              'variations' => ['يَ', 'يِ', 'يُ', 'يْ', 'يّ']
+          ],
+
+          'ء' => [
+              'before' => false,
+              'after' => false,
+              'variations' => $this->tashkeel->get('ء')
+          ]
+      ];
+    }
+
     /**
      * Parses tajweed from the GlobalQuran and AlQuran APIs to return markup
      * @param  string  $text      Verse text
@@ -185,16 +375,27 @@ class Tajweed
      * @param  string $text Verse text
      * @return String
      */
-    public function parseTajweed($text)
+    public function parseTajweed($text, $simplify = false)
     {
-        foreach ($this->meta as $meta)
-        $text = str_replace(
-            $meta['identifier'],
-            '<tajweed class="' . $meta['default_css_class']. '" data-type="' . $meta['type'] . '" data-description="' .$meta['description'] . '" data-tajweed="',
-            $text);
+        foreach ($this->meta as $meta) {
+            if ($simplify) {
+                $text = str_replace(
+                    $meta['identifier'],
+                    '<tajweed',
+                    $text
+                );
+            } else { 
+                $text = str_replace(
+                    $meta['identifier'],
+                    '<tajweed class="' . $meta['default_css_class']. '" data-type="' . $meta['type'] . '" data-description="' .$meta['description'] . '" data-tajweed="',
+                    $text);
+            }
+        }
 
         return $text;
     }
+
+
 
     /**
      * This method tries to add in a fix for webkit browsers that break with <tags> inside a string.
