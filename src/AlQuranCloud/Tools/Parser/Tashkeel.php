@@ -25,7 +25,7 @@ class Tashkeel
         $v[] = $letter;
         foreach ($this->harakat as $h) {
             if ($h !== '') {
-              $v[] = $letter . $c;
+              $v[] = $letter . $h;
             }
         }
         $v[] = $letter . "ُّ";

@@ -343,8 +343,14 @@ class Tajweed
               'before' => false,
               'after' => false,
               'variations' => $this->tashkeel->get('ء')
+          ],
+          ' ـٰ' => [
+              'before' => true,
+              'after' => true,
+              'variations' => $this->tashkeel->get('ء')
           ]
       ];
+
     }
 
     /**
@@ -359,14 +365,14 @@ class Tajweed
             return
                 $this->webkitFix(
                     $this->closeParsing(
-                        $this->parseTajweed($text)
+                        $this->parseTajweed($text, true)
                     )
                 );
             }
 
             return
                 $this->closeParsing(
-                    $this->parseTajweed($text)
+                    $this->parseTajweed($text, true)
                 );
     }
 
@@ -381,7 +387,7 @@ class Tajweed
             if ($simplify) {
                 $text = str_replace(
                     $meta['identifier'],
-                    '<tajweed',
+                    '<tajweed ignore="',
                     $text
                 );
             } else { 
@@ -411,15 +417,32 @@ class Tajweed
     {
         // Identify Tajweed tags, if there is not a space before or after, add &zwj;
         // After
-        $text = preg_replace('/<\/tajweed>(\S)/', '&zwj;${0}', $text);
+        //$text = preg_replace('/<\/tajweed>(\S)/', '&zwj;${0}', $text);
         // Before
-        $text = preg_replace('/(\S)<tajweed class="(.*?)" data-type="(.*?)" data-description="(.*?)" data-tajweed="(.*?)">(\S)/', '${1}<tajweed class="${2}" data-type="${3}" data-description="${4}" data-tajweed="${5}">&zwj;&zwj;${6}', $text);
+        //$text = preg_replace('/(\S)<tajweed class="(.*?)" data-type="(.*?)" data-description="(.*?)" data-tajweed="(.*?)">(\S)/', '${1}<tajweed class="${2}" data-type="${3}" data-description="${4}" data-tajweed="${5}">&zwj;&zwj;${6}', $text);
 
         // Let's remove all joiners where not needed for an Alif and a Waw
-        $text = str_replace(
-            ['ٱ&zwj;'],
-            ['ٱ'],
-            $text);
+        foreach ($this->mapper as $alpha => $props) {
+            foreach ($props['variations'] as $v) {
+                if ($props['after']) {
+                    $text = str_replace($v . '</tajweed>', $v . '</tajweed>&zwj;', $text);
+                } else {
+                    $text = str_replace($v . '</tajweed>', $v . '</tajweed>&zwnj;', $text);
+
+                }
+                if ($props['before']) {
+                    $text = str_replace('<tajweed>' . $v, '&zwj;<tajweed>' . $v, $text);
+                } else {
+                    $text = str_replace('<tajweed>' . $v, '&zwnj;<tajweed>' . $v, $text);
+                }
+            }
+        }
+
+        // Clean up and remove all zwjs for alif
+        foreach ($this->mapper['ا']['variations'] as $alif) {
+            $text = str_replace('&zwj;<tajweed>'. $alif, '<tajweed>' . $alif, $text);
+            $text = str_replace($alif . '</tajweed>&zwj;', $alif . '</tajweed>', $text);
+        }
 
         return $text;
     }
@@ -432,6 +455,8 @@ class Tajweed
     public function closeParsing($text)
     {
         $text = str_replace(['[', ']'], ['">', '</tajweed>'], $text);
+
+        return  preg_replace("/<([a-z][a-z0-9]*)[^>]*?(\/?)>/i",'<$1$2>', $text);
 
         return $text;
     }
