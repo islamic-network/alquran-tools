@@ -1,5 +1,9 @@
 ## بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيْمِ
 
+[![](https://img.shields.io/github/release/islamic-network/alquran-tools-php.svg)](https://github.com/islamic-network/alquran-tools/releases)
+![](https://img.shields.io/packagist/dt/alquran/tools.svg)
+[![](https://img.shields.io/github/license/islamic-network/alquran-tools.svg)](https://github.com/islamic-network/alquran-tools/blob/master/LICENSE)
+
 # Quran Tools for Parsing Tajweed and Buck
 These *PHP* tools are to be used with the <a href="https://alquran.cloud/api">AlQuran.cloud</a> and <a href="http://docs.globalquran.com/API:Data/Quran_List">GlobalQuran.com</a> APIs. They are made available so you may get the most out of the APIs.
 
