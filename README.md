@@ -1,6 +1,5 @@
 ## بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيْمِ
 
-[![](https://img.shields.io/github/release/islamic-network/alquran-tools-php.svg)](https://github.com/islamic-network/alquran-tools/releases)
 ![](https://img.shields.io/packagist/dt/alquran/tools.svg)
 [![](https://img.shields.io/github/license/islamic-network/alquran-tools.svg)](https://github.com/islamic-network/alquran-tools/blob/master/LICENSE)
 
