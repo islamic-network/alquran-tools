@@ -1,7 +1,7 @@
 <?php
-require_once('vendor/autoload.php');
+require_once('../vendor/autoload.php');
 
-$json = json_decode(file_get_contents('../data/tajweed.json'));
+$json = json_decode(file_get_contents('../data/tajweed2.json'));
 $text = $json->data->text;
 
 $parser = new AlQuranCloud\Tools\Parser\Tajweed();

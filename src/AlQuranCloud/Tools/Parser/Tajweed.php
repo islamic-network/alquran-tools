@@ -8,7 +8,7 @@ class Tajweed
     const LAAM_SHAMSIYAH = 3;
     const MADDA_NORMAL = 4;
     const MADDA_PERMISSIBLE = 5;
-    const MADDA_NECESSARY = 6;
+    const MADDA_NECESSARY = 17;
     const QALAQAH = 6;
     const MADDA_OBLIGATORY = 7;
     const IKHAFA_SHAFAWI = 8;
