@@ -44,8 +44,8 @@ See <a href="docs/tajweed.md">Tajweed Documentation</a>.
 See <a href="docs/buck.md">Buck Documentation</a>.
 
 ## Are there any known Issues
-Yes, with the Tajweed parser. Webkit has a known bug that breaks Arabic with inline tags. There is an experimental fix in the Tajweed Parse class for this using the Zero Width Joiner (&zwj;), but it still needs some work. I've manually tried this on some Ayahs and ZWJ is not smart enough to parse all the characters and join them properly, so this is not ideal. See See https://stackoverflow.com/questions/11155849/partially-colored-arabic-word-in-html
-and https://bugs.webkit.org/show_bug.cgi?id=6148.
+~~Yes, with the Tajweed parser. Webkit has a known bug that breaks Arabic with inline tags. There is an experimental fix in the Tajweed Parse class for this using the Zero Width Joiner (&zwj;), but it still needs some work. I've manually tried this on some Ayahs and ZWJ is not smart enough to parse all the characters and join them properly, so this is not ideal. See See https://stackoverflow.com/questions/11155849/partially-colored-arabic-word-in-html
+and https://bugs.webkit.org/show_bug.cgi?id=6148.~~ The issue with parsing in Chrome seems to have been resolved with Chrome's new layout implementation (https://www.chromium.org/blink/layoutng). It has been tested on version 77.0.3865.90.
 
 ## Credits
 Most of this code is created using logic from the Global Quran website and codebase.
