@@ -120,10 +120,10 @@ class Tajweed
             ],
             self::IDGHAM_GHUNNAH => [
                     'identifier' => '[a',
-                    'type' => 'idgham-without-ghunnah',
+                    'type' => 'idgham-with-ghunnah',
                     'description' => 'Idgham - With Ghunnah',
                     'default_css_class' => 'idgh_ghn',
-                    'html_color' => '#169200'
+                    'html_color' => '#169777'
             ],
             self::IDGHAM_NO_GHUNNAH => [
                     'identifier' => '[u',
