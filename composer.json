@@ -2,6 +2,7 @@
   "name": "alquran/tools",
   "type": "library",
   "description": "Various tools to parse and process Quran Text",
+  "license": "GPL-3.0-or-later",
   "authors": [
     {
       "name": "Meezaan-ud-Din Abdu Dhil-Jalali Wal-Ikram",
