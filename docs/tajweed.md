@@ -72,6 +72,14 @@ It uses the table below to parse what the API returns and converts it to somethi
                 <td>madda_permissible</td>
                 <td>Permissible Prolongation: 2, 4, 6 Vowels</td>
             </tr>
+         </tr>
+                    <tr>
+                <td class="madda_permissible">madda-necesssary</td>
+                <td>[m</td>
+                <td style="background-color: #000EBC">#000EBC</td>
+                <td>madda_necessary</td>
+                <td>Necessary Prolongation: 6 Vowels</td>
+            </tr>
                     <tr>
                 <td class="qlq">qalaqah</td>
                 <td>[q</td>
@@ -117,7 +125,7 @@ It uses the table below to parse what the API returns and converts it to somethi
                     <tr>
                 <td class="idgh_ghn">idgham-without-ghunnah</td>
                 <td>[a</td>
-                <td style="background-color: #169200">#169200</td>
+                <td style="background-color: #169777">#169777</td>
                 <td>idgh_ghn</td>
                 <td>Idgham - With Ghunnah</td>
             </tr>
