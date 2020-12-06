@@ -85,13 +85,13 @@ It uses the table below to parse what the API returns and converts it to somethi
                 <td>[q</td>
                 <td style="background-color: #DD0008">#DD0008</td>
                 <td>qlq</td>
-                <td>Qalaqah</td>
+                <td>Qalqalah</td>
             </tr>
                     <tr>
                 <td class="madda_pbligatory">madda-obligatory</td>
                 <td>[o</td>
                 <td style="background-color: #2144C1">#2144C1</td>
-                <td>madda_pbligatory</td>
+                <td>madda_obligatory</td>
                 <td>Obligatory Prolongation: 4-5 Vowels</td>
             </tr>
                     <tr>
@@ -144,10 +144,10 @@ It uses the table below to parse what the API returns and converts it to somethi
                 <td>Idgham - Mutajanisayn</td>
             </tr>
                     <tr>
-                <td class="idgh_mus">idgham-mutaqaribayn</td>
+                <td class="idgh_mut">idgham-mutaqaribayn</td>
                 <td>[b</td>
                 <td style="background-color: #A1A1A1">#A1A1A1</td>
-                <td>idgh_mus</td>
+                <td>idgh_mut</td>
                 <td>Idgham - Mutaqaribayn</td>
             </tr>
                     <tr>
