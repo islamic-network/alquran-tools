@@ -1,6 +1,6 @@
 # Tajweed Documentation
 
-This document explains how Tajweed parsing. In a nutsell, it takes something like:
+This document explains how Tajweed parsing. In a nutshell, it takes something like:
 
 ```
 [h:9421[ٱ]
