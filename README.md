@@ -6,6 +6,8 @@
 # Quran Tools for Parsing Tajweed and Buck
 These *PHP* tools are to be used with the <a href="https://alquran.cloud/api">AlQuran.cloud</a> and <a href="http://docs.globalquran.com/API:Data/Quran_List">GlobalQuran.com</a> APIs. They are made available so you may get the most out of the APIs.
 
+There's a React equivalent of this package @ https://github.com/aamirbhat382/Tajweed.
+
 # What do they contain
 For now, a <a href="docs/tajweed.md">Tajweed</a> and <a href="docs/buck.md">Buck</a> helper. Each section is detailed below. 
 
